@@ -13,7 +13,7 @@ if ($ARGV[0] eq "-l") { # listen mode
 
     my $sock = new IO::Socket::INET (
         LocalPort => $ARGV[1],
-        Proto => 'tcp',
+        Proto => "tcp",
         Listen => 1,
         Reuse => 1
     );
@@ -41,7 +41,7 @@ else { # connect mode
         my $sock = new IO::Socket::INET (
             PeerAddr => $ARGV[0],
             PeerPort => $ARGV[1],
-            Proto => 'tcp'
+            Proto => "tcp"
         );
 
         die "could not create socket: $!\n" unless $sock;
@@ -57,7 +57,7 @@ else { # connect mode
         my $sock = new IO::Socket::INET (
             PeerAddr => $ARGV[0],
             PeerPort => $ARGV[1],
-            Proto => 'tcp'
+            Proto => "tcp"
         );
 
         die "could not create socket: $!\n" unless $sock;
